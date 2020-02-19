@@ -1,6 +1,6 @@
 <template>
   <div>
-    购物车
+    老子是购物车
   </div>  
 </template>
 
@@ -9,7 +9,8 @@
   }
 </script>
 
-<style scoped>
-
+<style scoped lang="stylus">
+  div
+    font-size 100px
  
 </style>

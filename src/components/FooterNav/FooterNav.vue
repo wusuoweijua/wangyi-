@@ -12,11 +12,11 @@
       <span class="iconfont icon-mairu"></span>
       <span>值得买</span>
     </div>
-    <div @click="handleClass('/shopcar')" :class="{active:$route.path === '/shopcar'}">
+    <div @click="handleClass('/shopCar')" :class="{active:$route.path === '/shopCar'}">
       <span class="iconfont icon-goumai"></span>
       <span>购物车</span>
     </div>
-    <div @click="handleClass('/personal')" :class="{active:$route.path === '/personal'}">
+    <div @click="handleClass('/login')" :class="{active:$route.path === '/login'}">
       <span class="iconfont icon-geren"></span>
       <span>个人</span>
     </div>

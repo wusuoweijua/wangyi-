@@ -4,7 +4,7 @@
       <a href="#" class="logo"></a>
       <i class="search iconfont icon-sousuo"></i>
       <input type="text" class="input" placeholder="搜索商品，共2016款好物" @click="goSearch">
-      <div class="btn">登录</div>
+      <div class="btn" @click="$router.push('/login')">登录</div>
     </div>
     <div class="homeNav">
       <ul class="content">
@@ -16,7 +16,7 @@
         </li>
       </ul>
         <div class="down"  @click="hadleSelect">
-          <span class="iconfont icon-xiangxia" :class="{active:isShow}" ></span>
+          <span class="iconfont icon-xiangxia1" :class="{active:isShow}" ></span>
         </div>
     </div>
     <div class="swiper-container">
@@ -309,6 +309,7 @@ import Footer from '../../components/Footer/Footer'
       padding 0 62px
       box-sizing border-box
       border none
+      outline none
     .btn
       background #fff
       font-size 20px
