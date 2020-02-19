@@ -8,4 +8,13 @@ instance.interceptors.request.use(config=>{
   config.data = qs.stringify(config.data)
   return config
 })
+instance.interceptors.response.use(
+  response => response,
+  // eslint-disable-next-line no-unused-vars
+  error => {
+    console.log('请求失败了')
+    return new Promise(()=>{})
+  }
+  
+)
 export default instance

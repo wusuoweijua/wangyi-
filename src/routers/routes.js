@@ -3,6 +3,7 @@ import Class from '../pages/Class/Class.vue'
 import Personal from '../pages/Personal/Personal.vue'
 import Tobuy from '../pages/Tobuy/Tobuy.vue'
 import ShopCar from '../pages/ShopCar/ShopCar.vue'
+import Search from '../pages/Search/Search.vue'
 export default [
   {
     path:'/home',
@@ -23,6 +24,10 @@ export default [
   {
     path:'/ShopCar',
     component:ShopCar
+  },
+  {
+    path:'/Search',
+    component:Search
   },
   {
     path:'',
