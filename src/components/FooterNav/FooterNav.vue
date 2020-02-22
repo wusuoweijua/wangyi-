@@ -16,7 +16,7 @@
       <span class="iconfont icon-goumai"></span>
       <span>购物车</span>
     </div>
-    <div @click="handleClass('/login')" :class="{active:$route.path === '/login'}">
+    <div @click="handle" :class="{active:$route.path === '/personal'}">
       <span class="iconfont icon-geren"></span>
       <span>个人</span>
     </div>
@@ -25,9 +25,22 @@
 
 <script type="text/ecmascript-6">
   export default {
+    data(){
+      return {
+        user:''
+      }
+    },
     methods:{
       handleClass(url){
        this.$route.path!= url && this.$router.push(url)
+      },
+      handle(){
+        this.user = localStorage.getItem('user')
+        if(this.user){
+         this.$route.path!='/personal' && this.$router.push('/personal')
+        }else{
+          this.$router.push('/login')
+        }
       }
     }
   }

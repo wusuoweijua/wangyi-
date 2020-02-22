@@ -16,3 +16,19 @@ export const getSearchTip = (data)=>ajax({
     keywordPrefix:data
   }
 })
+export const getClass = ()=> ajax({
+  url:'/api/getClassList'
+})
+export const getCateList = ()=> ajax({
+  url:'/api/getCateList'
+})
+//值得买接口
+export const getBuyList = ()=> ajax({
+  url:'/foo/topic/v1/know/navWap.json'
+})
+export const getWaterFall = () => ajax({
+  url:'/foo/topic/v1/find/recManual.json'
+})
+export const getWaterNext = (page,size) => ajax({
+  url:`/foo/topic/v1/find/recAuto.json?page=${page}&size=${size}`
+})

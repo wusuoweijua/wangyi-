@@ -8,8 +8,9 @@
         <span class="iconfont icon-gouwuche" @click="$router.push('/shopCar')"></span>
       </div>
     </div>
-    <iphoneLogin v-show="isIphoneLogin" :isIphone="isIphone"/>
+    <iphoneLogin v-show="isIphoneLogin" :isIphone="isIphone" :isPassword="isPassword"/>
     <EmileLogin v-show="isEmileLogin" :isEmile="isEmile"/>
+    <PasswordLogin v-show="isPasswordLogin" :isPassword="isPassword"/>
     <div v-show="!isIphoneLogin || !isEmileLogin">
       <div class="center">
         <img src="//yanxuan.nosdn.127.net/39c5e4583753d4c3cb868a64c2c109ea.png" alt="">
@@ -24,7 +25,7 @@
           <span>邮箱账号登录</span>
         </div>
       </div>
-      <div class="footer" v-show="!isIphoneLogin && !isEmileLogin ">
+      <div class="footer" v-show="!isIphoneLogin && !isEmileLogin && !isPasswordLogin ">
       <ul>
         <li>
           <span class="iconfont icon-weixin"></span>
@@ -49,15 +50,18 @@
 <script type="text/ecmascript-6">
 import iphoneLogin from '../../components/iphoneLogin/iphoneLogin'
 import EmileLogin from '../../components/EmileLogin/EmileLogin'
+import PasswordLogin from '../../components/PasswordLogin/PasswordLogin'
   export default {
     components:{
       iphoneLogin,
-      EmileLogin
+      EmileLogin,
+      PasswordLogin
     },
     data(){
       return {
         isIphoneLogin:false,
-        isEmileLogin:false
+        isEmileLogin:false,
+        isPasswordLogin:false
       }
     },
     methods:{
@@ -66,7 +70,12 @@ import EmileLogin from '../../components/EmileLogin/EmileLogin'
     },
       isEmile(){
         this.isEmileLogin = false
-    }
+    },
+      isPassword(){
+        this.isEmileLogin = false
+        this.isIphoneLogin= false
+        this.isPasswordLogin = !this.isPasswordLogin
+      }
   }
   }
 </script>

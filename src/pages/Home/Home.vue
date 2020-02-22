@@ -4,7 +4,7 @@
       <a href="#" class="logo"></a>
       <i class="search iconfont icon-sousuo"></i>
       <input type="text" class="input" placeholder="搜索商品，共2016款好物" @click="goSearch">
-      <div class="btn" @click="$router.push('/login')">登录</div>
+      <div class="btn" @click="goLogin">{{user?'我的':'登录'}}</div>
     </div>
     <div class="homeNav">
       <ul class="content">
@@ -208,7 +208,8 @@ import Footer from '../../components/Footer/Footer'
         navIndex:0,
         isClick:false,
         active:false,
-        isShow:false
+        isShow:false,
+        user:''
       }
     },
     components:{
@@ -224,12 +225,13 @@ import Footer from '../../components/Footer/Footer'
         console.log(this.hotList)
         if(this.hotList && this.navList){
           this._initShow()
-        }   
+        }
+        this.user = localStorage.getItem('user')
     },
     computed: {
       ...mapState({
         navList:state => state.navList,
-        hotList:state => state.hotList
+        hotList:state => state.hotList,
       })
     },
     methods:{
@@ -242,7 +244,6 @@ import Footer from '../../components/Footer/Footer'
       },
       handleDown(){
         this.active = !this.active
-        console.log('点击l ')
         console.log(this.active)
       },
       goSearch(){
@@ -250,7 +251,13 @@ import Footer from '../../components/Footer/Footer'
       },
       hadleSelect(){
         this.isShow = !this.isShow
-
+      },
+      goLogin(){
+        if(this.user){
+          this.$router.replace('/personal')
+        }else{
+          this.$router.replace('/login')
+        }
       }
     },
     watch:{
